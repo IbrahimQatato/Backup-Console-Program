@@ -9,4 +9,4 @@ to quit the program press `Enter`
 
 **Example Usage**
 
-`dotnet run "/home/ibra/Documents/Job/testtask/demo/source" ./demo/backup 10000 ./demo/backup/backup_log.txt`
+`dotnet run "/home/Documents/Job/testtask/demo/source" ./demo/backup 10000 ./demo/backup/backup_log.txt`
