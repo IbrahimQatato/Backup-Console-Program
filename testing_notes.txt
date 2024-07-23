@@ -1,0 +1,15 @@
+Tests for adding files to source:
+
+1. add files in base directory
+2. add files in sub-directory
+
+3. Test relative paths
+4. Test absolute paths
+
+5. Test deleting a file
+
+6. test deleting a file then changing one file
+
+dotnet run "/home/ibra/Documents/Job/testtask/demo/source" ./demo/backup 10000 ./demo/backup/backup_log.txt
+
+dotnet run "/home/ibra/Documents/Job/testtask/demo/source" ./demo/new_backup 10000 ./demo/new_backup/backup_log.txt

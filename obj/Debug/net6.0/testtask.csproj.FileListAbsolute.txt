@@ -1,0 +1,15 @@
+/home/ibra/Documents/Job/testtask/bin/Debug/net6.0/testtask
+/home/ibra/Documents/Job/testtask/bin/Debug/net6.0/testtask.deps.json
+/home/ibra/Documents/Job/testtask/bin/Debug/net6.0/testtask.runtimeconfig.json
+/home/ibra/Documents/Job/testtask/bin/Debug/net6.0/testtask.dll
+/home/ibra/Documents/Job/testtask/bin/Debug/net6.0/ref/testtask.dll
+/home/ibra/Documents/Job/testtask/bin/Debug/net6.0/testtask.pdb
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.csproj.AssemblyReference.cache
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.GeneratedMSBuildEditorConfig.editorconfig
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.AssemblyInfoInputs.cache
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.AssemblyInfo.cs
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.csproj.CoreCompileInputs.cache
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.dll
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/ref/testtask.dll
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.pdb
+/home/ibra/Documents/Job/testtask/obj/Debug/net6.0/testtask.genruntimeconfig.cache
