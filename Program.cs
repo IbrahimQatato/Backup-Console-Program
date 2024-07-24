@@ -17,7 +17,16 @@ class Program {
     }
     
     if (!Directory.Exists(backupFolder)){// check backup folder and warn user
+    try {
       Directory.CreateDirectory(backupFolder);
+    }catch (ArgumentException ex){
+      WriteLine($"Error: the path {backupFolder} is invalid");
+      WriteLine(ex.Message);
+      Environment.Exit(1);
+    } catch(Exception ex){
+      WriteLine(ex.Message);
+      Environment.Exit(1);
+    }
       WriteLine("Backup directory created");
     }
     else{
