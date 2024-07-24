@@ -12,8 +12,10 @@ class Program {
     
     if (!Directory.Exists(sourceFolder)){// check source folder exists
       WriteLine("Source folder doesn't exist");
-      Console.WriteLine("Exiting the program.");
+      WriteLine("Exiting the program.");
       Environment.Exit(0);
+    }else{
+      HandleFolderReadPermission(sourceFolder);
     }
     
     if (!Directory.Exists(backupFolder)){// check backup folder and warn user
@@ -30,6 +32,8 @@ class Program {
       WriteLine("Backup directory created");
     }
     else{
+      HandleFolderWritePermission(backupFolder);
+      HandleFolderReadPermission(backupFolder);
       WriteLine($"The backup directory already exists. Are you sure you want to use {backupFolder} as your backup? It will delete all files not found in the source: {sourceFolder} (y/N)?");
       string? input = Console.ReadLine();
 
@@ -78,5 +82,59 @@ class Program {
 
     synchronizer.Run();
   }
+
+  static void HandleFolderWritePermission(string directoryPath){
+    if(!HasWritePermission(directoryPath)){
+        WriteLine($"Not authorised to write to {directoryPath}, please check the permissions");
+        WriteLine("Exiting the program.");
+        Environment.Exit(0);
+      }
+  }
+  static void HandleFolderReadPermission(string directoryPath){
+    if(!HasReadPermission(directoryPath)){
+        WriteLine($"Not authorised to read from {directoryPath}, please check the permissions");
+        WriteLine("Exiting the program.");
+        Environment.Exit(0);
+      }
+  }
+
+  static bool HasReadPermission(string directoryPath)
+    {
+        try
+        {
+            Directory.GetFiles(directoryPath);
+            return true;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return false;
+        }
+    }
+
+    static bool HasWritePermission(string directoryPath)
+    {
+        try
+        {
+            string testFilePath = Path.Combine(directoryPath, Path.GetRandomFileName());
+            using (FileStream fs = File.Create(testFilePath, 1, FileOptions.DeleteOnClose)) { }
+            return true;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return false;
+        }
+    }
+
 }
 // possible improvement: check if source contains a file named like logFile to avoid overwriting
+
