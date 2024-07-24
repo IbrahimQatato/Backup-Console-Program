@@ -10,3 +10,5 @@ to quit the program press `Enter`
 **Example Usage**
 
 `dotnet run "/home/Documents/Job/testtask/demo/source" ./demo/backup 10000 ./demo/backup/backup_log.txt`
+
+`dotnet run /home/Documents/Job/testtask/demo/source /home/Documents/Job/testtask/demo/backup 10000 /home/Documents/Job/testtask/demo/backup/backup_log.txt`
